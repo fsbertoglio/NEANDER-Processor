@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Sun Jul 31 12:10:07 2022
+# Process ID: 8476
+# Current directory: C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/synth_1
+# Command line: vivado.exe -log neander.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source neander.tcl
+# Log file: C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/synth_1/neander.vds
+# Journal file: C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/synth_1\vivado.jou
+#-----------------------------------------------------------
+source neander.tcl -notrace

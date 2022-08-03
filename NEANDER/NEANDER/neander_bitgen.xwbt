@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Felipe\Documents\Sistemas-Digitais\NEANDER\NEANDER\neander.ncd
+OUTFILE=C:\Users\Felipe\Documents\Sistemas-Digitais\NEANDER\NEANDER\neander.bit
+FAMILY=Spartan3E
+PART=xc3s100e-5cp132
+WORKINGDIR=C:\Users\Felipe\Documents\Sistemas-Digitais\NEANDER\NEANDER
+LICENSE=WebPack
+USER_INFO=212506716_0_0_050

@@ -1,0 +1,68 @@
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s100e-cp132-5 neander.ngc neander.ngd  
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc3s100e-cp132-5 neander.ngc neander.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o neander_map.ncd neander.ngd neander.pcf 
+vhdtdtfi -lib work neander.vhd -prj NEANDER -o neander.spl -module neander -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e neander.spl C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.sym 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s100e-cp132-5 neander.ngc neander.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o neander_map.ncd neander.ngd neander.pcf 
+vhdtdtfi -lib work neander.vhd -prj NEANDER -o neander.spl -module neander -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e neander.spl C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.sym 
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o neander_map.ncd neander.ngd neander.pcf 
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o neander_map.ncd neander.ngd neander.pcf 
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o neander_map.ncd neander.ngd neander.pcf 
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o neander_map.ncd neander.ngd neander.pcf 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s100e-cp132-5 neander.ngc neander.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o neander_map.ncd neander.ngd neander.pcf 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s100e-cp132-5 neander.ngc neander.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o neander_map.ncd neander.ngd neander.pcf 
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o neander_map.ncd neander.ngd neander.pcf 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+xst -intstyle ise -ifn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.xst" -ofn "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s100e-cp132-5 neander.ngc neander.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o neander_map.ncd neander.ngd neander.pcf 
+par -w -intstyle ise -ol high -t 1 neander_map.ncd neander.ncd neander.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml neander.twx neander.ncd -o neander.twr neander.pcf 
+vhdtdtfi -lib work neander.vhd -prj NEANDER -o neander.spl -module neander -template D:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e neander.spl C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/NEANDER/neander.sym 
+netgen -intstyle ise -rpw 100 -tpw 0 -ar Structure -tm neander -w -dir netgen/translate -ofmt vhdl -sim neander.ngd neander_translate.vhd 
+netgen -intstyle ise -s 5  -pcf neander.pcf -rpw 100 -tpw 0 -ar Structure -tm neander -w -dir netgen/map -ofmt vhdl -sim neander_map.ncd neander_map.vhd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc neander.ucf -p xc3s100e-cp132-5 neander.ngc neander.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o neander_map.ncd neander.ngd neander.pcf 
+netgen -intstyle ise -s 5  -pcf neander.pcf -rpw 100 -tpw 0 -ar Structure -tm neander -w -dir netgen/map -ofmt vhdl -sim neander_map.ncd neander_map.vhd 
+par -w -intstyle ise -ol high -t 1 neander_map.ncd neander.ncd neander.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml neander.twx neander.ncd -o neander.twr neander.pcf -ucf neander.ucf 
+bitgen -intstyle ise -f neander.ut neander.ncd 
