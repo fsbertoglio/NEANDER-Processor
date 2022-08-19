@@ -1,136 +1,140 @@
 ----------------------------------------------------------------------------------
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
-use IEEE.NUMERIC_STD.ALL;
+USE IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
- 
+ENTITY neander IS
+    PORT (
+        clk : IN STD_LOGIC; -- Clock do sistema
+        out_MEM : IN STD_LOGIC_VECTOR (7 DOWNTO 0); -- Dados de saida de memória (SERÂO INMPLEMENTADOS NA MEMÒRIA)
+        sel_MUX : IN STD_LOGIC; -- seletor do MUX
+        rst_PC, load_PC, inc_PC : IN STD_LOGIC; -- controles de PC
+        rst_REM, load_REM : IN std_logic; -- controles de REM
+        rst_AC, load_AC : IN std_logic; -- controles de AC
+        rst_RDM, load_RDM : IN std_logic; -- controles RDM
+        rst_RI, load_RI : IN std_logic; -- controles RI
+        sel_ULA : IN STD_LOGIC_VECTOR (2 DOWNTO 0); -- seletor de operação ULA
+        reg_N, reg_Z : OUT STD_LOGIC; -- flags zero e negativo
+        reg_REM, reg_RI : OUT STD_LOGIC_VECTOR (7 DOWNTO 0));
+END neander;
 
-entity neander is
-    Port ( clk : in STD_LOGIC;
-	 out_MEM : in STD_LOGIC_VECTOR (7 downto 0);
-	 sel_MUX : in STD_LOGIC;
-    load_PC : in STD_LOGIC;
-	 sel_ULA : in STD_LOGIC_VECTOR (2 downto 0);
-	 rst_PC, rst_AC, rst_RDM, rst_REM, rst_RI : in STD_LOGIC;
-	 ctrl_ULA, ctrl_PC, ctrl_AC, ctrl_REM, ctrl_RDM, ctrl_RI : in STD_LOGIC;
-	 reg_REM, reg_RI : out STD_LOGIC_VECTOR (7 downto 0);
-	 reg_N, reg_Z: out STD_LOGIC);
-    end neander;
-    
-    architecture Behavioral of neander is
-        signal X, Y, out_ULA, out_MUX : STD_LOGIC_VECTOR (7 downto 0);
-        signal reg_PC, reg_AC, reg_RDM : STD_LOGIC_VECTOR (7 downto 0);
-               
-        begin
+ARCHITECTURE Behavioral OF neander IS
+    SIGNAL X, Y, out_ULA, out_MUX : STD_LOGIC_VECTOR (7 DOWNTO 0);
+    SIGNAL reg_PC, reg_AC, reg_RDM : STD_LOGIC_VECTOR (7 DOWNTO 0);
 
--- BRAM e FSM
+BEGIN
+
+    -- BRAM e FSM
     -- Não implementado;
 
--- Registradores, MUXs e ULA
-            process(sel_ULA, X, Y, ctrl_ULA, reg_AC, reg_RDM)
-            begin
-                X <= reg_AC;
-                Y <= reg_RDM;
-                if ctrl_ULA = '1' then
-                    CASE sel_ULA is
-                        when "000" => out_ULA <= STD_LOGIC_VECTOR(signed(X) + signed(Y));
-                        when "001" => out_ULA <= X and Y;
-                        when "010" => out_ULA <= X or Y;
-                        when "011" => out_ULA <= not X;
-                        when "100" => out_ULA <= Y;
-                        when others => out_ULA <= X;
-                    end CASE;
-                    if out_ULA(7) = '1' then
-                        reg_N <= '1';
-                    else
-                        reg_N <= '0';
-                    end if;
-                    if out_ULA = "00000000" then
-                        reg_Z <= '1';
-                    else
-                        reg_Z <= '0';
-                    end if;
-                else
-                    out_ULA <= X;
-                end if;
-            end process; -- ULA
+    -- Registradores, MUXs e ULA
+    PROCESS (sel_ULA, X, Y, reg_AC, reg_RDM) --ULA-----------------------------------------------------
+    BEGIN
+        X <= reg_AC;
+        Y <= reg_RDM;
+        CASE sel_ULA IS
+            WHEN "000" => out_ULA <= STD_LOGIC_VECTOR(signed(X) + signed(Y));
+            WHEN "001" => out_ULA <= X AND Y;
+            WHEN "010" => out_ULA <= X OR Y;
+            WHEN "011" => out_ULA <= NOT X;
+            WHEN "100" => out_ULA <= Y;
+            WHEN "101" => out_ULA <= std_logic_vector(signed(X) - signed(Y));
+            WHEN "110" => out_ULA <= X xor Y;
+            WHEN OTHERS => out_ULA <= X;
+        END CASE;
+        IF out_ULA(7) = '1' THEN
+            reg_N <= '1';
+        ELSE
+            reg_N <= '0';
+        END IF;
+        IF out_ULA = "00000000" THEN
+            reg_Z <= '1';
+        ELSE
+            reg_Z <= '0';
+        END IF;
+    END PROCESS; ---------------------------------------------------------------------------------------
 
-            process(sel_MUX, reg_PC, reg_RDM)
-            begin
-                CASE sel_MUX is
-                    when '1' => out_MUX <= reg_PC;
-                    when '0' => out_MUX <= reg_RDM;
-                    when others => out_MUX <= reg_PC;
-                end CASE;
-                
-            end process ; -- MUX
+    PROCESS (sel_MUX, reg_PC, reg_RDM) --MUX-----------------------------------------------------------
+    BEGIN
+        CASE sel_MUX IS
+            WHEN '1' => out_MUX <= reg_PC;
+            WHEN '0' => out_MUX <= reg_RDM;
+        END CASE;
+    END PROCESS; -- MUX---------------------------------------------------------------------------------
 
-                    
-            process( ctrl_PC, rst_PC, load_PC, reg_RDM, clk)
-            begin
-                if ctrl_PC = '1' then
-                    if rst_PC = '1' then
-                        reg_PC <= "00000000";
-                    elsif(clk'event and clk = '1') then
-                        if (load_PC = '1') then
-                            reg_PC <= reg_RDM;
-                        else
-                            reg_PC <= STD_LOGIC_VECTOR(unsigned(reg_PC) + 1);
-                        end if ;
-                    end if;
-                end if;      
-            end process; --reg_PC
+    PROCESS (rst_PC, load_PC, reg_RDM, clk) --REG_PC---------------------------------------------------
+    BEGIN
+        IF rst_PC = '1' THEN
+            reg_PC <= "00000000";
+        ELSIF (clk'event AND clk = '1') THEN
+            IF (load_PC = '1') THEN
+                reg_PC <= reg_RDM;
+            ELSIF (inc_PC = '1') THEN
+                reg_PC <= STD_LOGIC_VECTOR(unsigned(reg_PC) + 1);
+            else
+                reg_PC <= reg_PC;
+            END IF;
+        END IF;
+    END PROCESS; ---------------------------------------------------------------------------------------
 
-            process( ctrl_AC, rst_AC,out_ULA, clk)
-            begin
-                if ctrl_AC = '1' then
-                    if rst_AC = '1' then
-                        reg_AC <= "00000000";
-                    elsif(clk'event and clk = '1') then
-                        reg_AC <= out_ULA;
-                    end if;
-                end if;      
-            end process; --reg_AC
+    PROCESS (rst_AC, out_ULA, clk) --REG_AC------------------------------------------------------------
+    BEGIN
+        IF rst_AC = '1' THEN
+            reg_AC <= "00000000";
+        ELSIF (clk'event AND clk = '1') THEN
+            if (load_AC = '1') then
+                reg_AC <= out_ULA;
+            else 
+                reg_AC <= reg_AC;
+            end if;
+        end if;
+    END PROCESS; ------------------------------------------------------------------------------------------
 
-            process( ctrl_REM, rst_REM, out_MUX, clk)
-            begin
-                if ctrl_REM = '1' then
-                    if rst_REM = '1' then
-                        reg_REM <= "00000000";
-                    elsif(clk'event and clk = '1') then
-                        reg_REM <= out_MUX;
-                    end if;
-                end if;      
-            end process; --reg_REM
+    PROCESS (rst_REM, out_MUX, clk)--REG_REM-----------------------------------------------------------
+    BEGIN
+        IF rst_REM = '1' THEN
+            reg_REM <= "00000000";
+        ELSIF (clk'event AND clk = '1') THEN
+            if (load_REM = '1') then
+                reg_REM <= out_MUX;
+            else 
+                reg_REM <= reg_REM;
+            end if;
+        END IF;
+    END PROCESS; --------------------------------------------------------------------------------------
 
-            process( ctrl_RDM, rst_RDM, out_MEM, clk) 
-            begin
-                if ctrl_RDM = '1' then
-                    if rst_RDM = '1' then
-                        reg_RDM <= "00000000";
-                    elsif(clk'event and clk = '1') then
-                        reg_RDM <= out_MEM;
-                    end if;
-                end if;      
-            end process; --reg_RDM
-        
-            process( ctrl_RI, rst_RI, reg_RDM, clk)
-            begin
-                if ctrl_Ri = '1' then
-                    if rst_RI = '1' then
-                        reg_RI <= "00000000";
-                    elsif(clk'event and clk = '1') then
-                        reg_RI <= reg_RDM;
-                    end if;
-                end if;      
-            end process; --reg_RI
-        
-        end Behavioral;
+    PROCESS (rst_RDM, out_MEM, clk)--REG_RDM-----------------------------------------------------------
+    BEGIN
+        IF rst_RDM = '1' THEN
+            reg_RDM <= "00000000";
+        ELSIF (clk'event AND clk = '1') THEN
+            if (load_RDM = '1') then
+                reg_RDM <= out_MEM;
+            else 
+                reg_RDM <= reg_RDM;
+            end if;
+        END IF;
+    END PROCESS; --------------------------------------------------------------------------------------
+
+    PROCESS (rst_RI, reg_RDM, clk)--REG_RI-------------------------------------------------------------
+    BEGIN
+        IF rst_RI = '1' THEN
+            reg_RI <= "00000000";
+        ELSIF (clk'event AND clk = '1') THEN
+            if (load_RI = '1') then
+                reg_RI <= reg_RDM;
+            else 
+                reg_RI <= reg_RI;
+            end if;
+        END IF;
+    END PROCESS; ----------------------------------------------------------------------------------------
+
+END Behavioral;
