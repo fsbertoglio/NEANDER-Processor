@@ -133,45 +133,4 @@ entity neander is
                 end if;      
             end process; --reg_RI
         
-        end Behavioral;    
-        
-
-
-\*
-    process(clk, rst)
-    begin
-        if (rst = '1') then
-            estado <= S0;
-        elsif(clk'event and clk = '1') then
-            CASE estado is
-                when S0 =>
-                when S1 =>
-                when S2 =>
-                when S3 =>
-                when S4 =>
-                when S5 =>
-                when S6 =>
-                when S7 =>
-                when S8 =>
-            end CASE;
-        end if;
-    end process;
-*\
-
-
-\
-    reg_N
-    reg_z
-    ctrl_ULA
-    sel_ULA
-    out_ULA
-    X
-    Y
-    reg_endMem
-    reg_DataMem
-    reg_op
-    reg_PC
-        ctrl_PC
-        rst_PC
-        load_PC
-\
+        end Behavioral;
