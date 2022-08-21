@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/Neander_ISE/neander/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/Felipe/Documents/Sistemas-Digitais/NEANDER/Neander_ISE/neander/xst"
+elaborate
+-ifn neander.prj
+-ifmt mixed
