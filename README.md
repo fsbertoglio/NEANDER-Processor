@@ -1,2 +1,2 @@
-# Sistemas Digitais
- Cadeira de Sistemas Digitais 22/1 - UFRGS
+# Neander Multicycle Processor
+ NEANDER processor developed in VHDL as an assignment for the Digital Systems class @ UFRGS.
